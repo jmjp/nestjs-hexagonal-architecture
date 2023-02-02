@@ -10,8 +10,7 @@ export class CreateUserService implements CreateUserUseCase {
     execute(data: CreateUserCommand): Promise<User> {
         const user: User = {
             email: data.email,
-            username: data.username,
-            createdAt: new Date()
+            username: data.username
         }
         return this.userOut.store(user);
     }
