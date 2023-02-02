@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { Database } from "src/application/database/database";
-import { CreateUserCommand } from "src/application/ports/in/create-user.command";
 import { UserPersistencePort } from "src/application/ports/out/user-persistence.port";
+import { User } from "src/domain/entities/user";
 
 @Injectable()
 export class CreateUserAdapter implements UserPersistencePort {
