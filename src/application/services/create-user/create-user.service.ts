@@ -6,12 +6,12 @@ import { User } from 'src/domain/entities/user';
 
 @Injectable()
 export class CreateUserService implements CreateUserUseCase {
-    constructor(private readonly userOut: UserPersistencePort) { }
+    constructor(private readonly userPersistencePort: UserPersistencePort) { }
     execute(data: CreateUserCommand): Promise<User> {
         const user: User = {
             email: data.email,
             username: data.username
         }
-        return this.userOut.store(user);
+        return this.userPersistencePort.store(user);
     }
 }
